@@ -1,0 +1,506 @@
+*******************************************
+** PortalTransforms V1.7.0 [R1 build 2006/03/03-17:50 by ben]
+** SVN URL: https://svn.nuxeo.org/pub/PortalTransforms/trunk Revision: 33914
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+-
+Bug fixes:
+~~~~~~~~~~
+-
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+- use StructuredText
+
+*******************************************
+** PortalTransforms V1.6.1 [R1 build 2006/02/17-20:34 by fermigier]
+** SVN URL: https://svn.nuxeo.org/pub/PortalTransforms/trunk Revision: 33081
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+-
+Bug fixes:
+~~~~~~~~~~
+- Changed icons (?)
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+
+*******************************************
+** PortalTransforms V1.6.0 [R1 build 2006/01/23-17:36 by fermigier]
+** SVN URL: https://svn.nuxeo.org/pub/PortalTransforms/trunk Revision: 31976
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+- Support of pdf_to_html on win32
+- Support of docbook_to_html on win32
+- Support of ppt_to_html on win32
+- Support of xls_to_html on win32
+- Support of ooo_to_html on win32
+- Support of ooo_to_docbook on win32
+- Support of word_to_html on win32 by using wvWare
+Bug fixes:
+~~~~~~~~~~
+- Fixed security declarations on some methods.
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+- Switched to new stable version of ooo2dbk which includes many small bugfixes.
+- By default wvware will be used to convert word documents to html on
+  win32 platform.
+*******************************************
+** PortalTransforms V1.5.0 [R1 build 2005/11/07-15:38 by fguillaume]
+** SVN URL: https://svn.nuxeo.org/pub/PortalTransforms/trunk Revision: 29155
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+-
+Bug fixes:
+~~~~~~~~~~
+-
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+- Switched to using ooo2dbk 1.4.3 instead of version 1.4.1.
+-
+
+*******************************************
+** PortalTransforms V1.4.0 [R1 build 2005/08/05-14:01 by ben]
+** SVN URL: https://svn.nuxeo.org/pub/PortalTransforms/trunk Revision: 25426
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+-
+Bug fixes:
+~~~~~~~~~~
+- word_to_html/posix (wvware) now outputs Latin9 instead of UTF8 by default
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+- Removed some stdout prints, and better LOGs.
+
+*******************************************
+** PortalTransforms V1.3.17 [R1 build 2005/06/02-12:05 by fguillaume]
+** SVN URL: https://svn.nuxeo.org/pub/PortalTransforms/trunk Revision: 22126
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+-
+Bug fixes:
+~~~~~~~~~~
+-
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+- ooo2dbk is now an svn:externals pointing to ooo2dbk 1.4.1.
+
+*******************************************
+** PortalTransforms V1.3.16 [R1 build 2005/01/20-11:52 by ben]
+
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+- Changing package version number: 0.3.16 is now 1.3.16 
+  and fix old invalid verstion.txt that were containing 1.0.3
+Bug fixes:
+~~~~~~~~~~
+- Do not let DocBook XSL put style or hardcoded HTML "type" information on
+  lists. We prefer to use the portal CSS.
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+
+*******************************************
+** PortalTransforms V0.3.15 [R1 build 2004/12/21-15:08 by madarche]
+
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+- Switched to DocBook XSL 1.67.2.
+Bug fixes:
+~~~~~~~~~~
+- Fixed the HTML headers going upper than h6 by switching to
+  DocBook XSL 1.67.2.
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+
+*******************************************
+** PortalTransforms V0.3.14 [R1 build 2004/12/13-09:16 by madarche]
+
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+-
+Bug fixes:
+~~~~~~~~~~
+- Renamed "ooo2dbk.py" into "ooo2dbk" as a standalone script should not have any
+  suffix.
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+- Using new ooo2dbk
+
+*******************************************
+** PortalTransforms V0.3.13 [R1 build 2004/12/01-10:30 by madarche]
+
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+-
+Bug fixes:
+~~~~~~~~~~
+- Added a missing LOG import.
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+
+*******************************************
+** PortalTransforms V0.3.12 [R1 build 2004/11/30-09:49 by madarche]
+
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+-
+Bug fixes:
+~~~~~~~~~~
+-
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+- For the docbook_to_html transform, all the configuration parameters are now
+  set in a custom-xhtml.xsl file instead of being passed as command line
+  arguments.
+
+*******************************************
+** PortalTransforms V0.3.11 [R1 build 2004/11/15-12:45 by madarche]
+
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+- Added support for more DocBook tags and various other improvements (appendix
+  support, figure number fix, etc.)
+Bug fixes:
+~~~~~~~~~~
+- In the sx2ml transform commented the treatment of "svg:width" and "svg:height"
+  because it doesn't work, so that images are not generated with a wrong "NaN"
+  width and height.
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+
+*******************************************
+** PortalTransforms V0.3.10 [R1 build 2004/10/14-17:05 by anahide]
+
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+-
+Bug fixes:
+~~~~~~~~~~
+- IndexError when mimetype is not found in MimeTypesRegistry.classify
+- mimetype was classified as text/plain when the mimetype was not known,
+  instead of defaulting to None.
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+
+*******************************************
+** PortalTransforms V0.3.9 [R1 build 2004/08/27-14:00 by madarche]
+
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+-
+Bug fixes:
+~~~~~~~~~~
+- Bugfix on the DocBook XSL stylesheets for the emphasis element, so that role
+  "strong" is truly taken into account.
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+
+*******************************************
+** PortalTransforms V0.3.8 [R1 build 2004/08/27-10:13 by madarche]
+
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+-
+Bug fixes:
+~~~~~~~~~~
+- In ooo_to_docbook, made the Bibliocoverage, Bibliosource and Bibliorelation
+  not appear in the body of the document.
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+
+*******************************************
+** PortalTransforms V0.3.7 [R1 build 2004/08/24-16:04 by madarche]
+
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+- For the docbook_to_html transform generate numbering for sections.
+Bug fixes:
+~~~~~~~~~~
+-
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+
+*******************************************
+** PortalTransforms V0.3.6 [R1 build 2004/08/19-13:40 by madarche]
+
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+- Handling of the Remark OOo style and the remark DocBook element.
+Bug fixes:
+~~~~~~~~~~
+- Made Keywordset not appear outside the metadata.
+- Switched ooo2dbk.xsl to encoding="ISO-8859-15"
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+
+*******************************************
+** PortalTransforms V0.3.5 [R1 build 2004/08/16-12:54 by madarche]
+
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+-
+Bug fixes:
+~~~~~~~~~~
+- Fixed Bibliorelation -> <bibliorelation> for the ooo_to_docbook transform
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+
+*******************************************
+** PortalTransforms V0.3.4 [R1 build 2004/08/13-15:33 by madarche]
+
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+-
+Bug fixes:
+~~~~~~~~~~
+- Removed doc files and transforms from docbook to javahelp and htmlhelp to not
+  waste too much space.
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+
+*******************************************
+** PortalTransforms V0.3.3 [R1 build 2004/07/30-10:06 by ben]
+
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+-
+Bug fixes:
+~~~~~~~~~~
+- Fix problem in docbook to html conversion when there are no subimages.
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+
+*******************************************
+** PortalTransforms V0.3.2 [R1 build 2004/06/25-14:19 by madarche]
+
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+- Adding support for more DocBook element such as bibliocoverage, bibliosource,
+  bibliorelation, etc. and file renaming to reflect the fact that it's not
+  dealing with simplified DocBook anymore, but with DocBook.
+Bug fixes:
+~~~~~~~~~~
+-
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+
+*******************************************
+** PortalTransforms V0.3.1 [R1 build 2004/06/18-16:43 by madarche]
+
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+-
+Bug fixes:
+~~~~~~~~~~
+- Made the transforms look for sub-objects in a sub-directory only if such a
+  sub-directory exists. The previous implementation had the effect that only
+  transforms which had files with images in sub-directories could work.
+- Disabled in ooo2sdbk.xsl the management of measure units for images because it
+  produced inch in DocBook and it was not useful anyway as of now
+
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+
+*******************************************
+** PortalTransforms V0.3.0 [R1 build 2004/06/16-11:36 by madarche]
+
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+- For docbook_to_html transform dumping potential subobjects first on the tmpdir
+  before launching the transformation thus making it possible to have images in
+  the html conversion
+Bug fixes:
+~~~~~~~~~~
+- For OO.o transforms specifying where the subobjects (images) are to be found
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+
+*******************************************
+** PortalTransforms V0.2.0 [R1 build 2004/06/11-17:40 by madarche]
+
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+- Adding the 'application/docbook+xml' official mime type
+- Adding OOo2sDBK tool
+- Adding DocBook XSL transforms
+- Adding the docbook_to_html transform
+- Adding the ooo_to_docbook transform
+
+Bug fixes:
+~~~~~~~~~~
+- Fill in cps_suffix_map to differentiate a double extension containing xml.
+- Docbook format is not binary
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+
+*******************************************
+** PortalTransforms V0.1.4 [R1 build 2004/06/04-15:35 by hcauwelier]
+
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+-
+Bug fixes:
+~~~~~~~~~~
+- .gz, .tar and .tar.gz DON'T use the same mimetype; almost completely rewrote
+  lookupExtension and cleaned it like upstream authors did.
+- Also changed MimeTypesTool to also have .tar.gz for application/x-gtar.
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+- Taught the unit test the difference between a plain tar file and a gzip'ed tar
+  file.
+
+*******************************************
+** PortalTransforms V0.1.3 [R1 build 2004/05/26-13:10 by madarche]
+
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+-
+Bug fixes:
+~~~~~~~~~~
+-
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+- Added /bin to the list of binary search path.
+
+*******************************************
+** PortalTransforms V0.1.2 [R1 build 2004/05/18-11:48 by madarche]
+
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+-
+Bug fixes:
+~~~~~~~~~~
+- Adding icons for OpenOffice.org sxw and sxc files
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+
+*******************************************
+** PortalTransforms V0.1.1 [R1 build 2004/05/06-12:40 by madarche]
+
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+-
+Bug fixes:
+~~~~~~~~~~
+- Removing a the application/excel erroneous mime-type that creeps in without
+  anybody knowing why
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+
+*******************************************
+** PortalTransforms V0.1.0 [R1 build 2004/02/25-08:47 by ben]
+
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+- SF: nuxeo integration ?
+Bug fixes:
+~~~~~~~~~~
+-
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+

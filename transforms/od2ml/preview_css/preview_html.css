@@ -1,0 +1,32 @@
+/* DTML instructions to set caching headers.
+
+
+
+
+
+*/
+
+
+/* DTML instructions to set caching headers.
+
+
+
+
+
+*/
+
+
+.preview_html_tab {
+  padding:10px 0px 0px 10px;
+  border-color:transparent;
+  background-color:#FFF;
+  color:#333333;
+  background-image:url(main_top_corner.png);
+  background-repeat:no-repeat;
+  background-position:top left}
+}
+
+p.preview_html_tabtitle {
+  font-weight:bold;
+  text-align:right;
+}

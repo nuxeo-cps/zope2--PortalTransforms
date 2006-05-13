@@ -1,0 +1,1 @@
+@python -c "from Products.PortalTransforms.transform_cl import run; import sys; run(*sys.argv[1:])" %*

@@ -1,0 +1,10 @@
+<pre class="python">
+<font color="#004080">""" nice docstring """</font>
+
+<font color="#C00000">class</font> <font color="#000000">A</font> <font color="#0000C0">:</font> <font color="#C00000">pass</font>
+
+<font color="#008000"># comment
+</font>
+<font color="#C00000">def</font> <font color="#000000">inc</font><font color="#0000C0">(</font><font color="#000000">i</font><font color="#0000C0">)</font><font color="#0000C0">:</font>
+    <font color="#C00000">return</font> <font color="#000000">i</font><font color="#0000C0">+</font><font color="#0080C0">1</font>
+</pre>

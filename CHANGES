@@ -1,0 +1,14 @@
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+- supports opendocument mimetypes
+- supports opendocument transforms to html
+Bug fixes:
+~~~~~~~~~~
+- sxi test now passes
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+- tests tests_transform.py activation
+- tests transformss exclusion list 

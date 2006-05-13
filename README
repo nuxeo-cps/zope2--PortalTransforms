@@ -1,0 +1,108 @@
+Portal Transforms
+=================
+
+This Zope product provides two new tools for the CMF in order to make MIME
+types based transformations on the portal contents, and so an easy to way to
+plugin some new transformations for previously unsupported content types. The
+provided tools are :
+
+ * mimetypes_registry (the mimetypes tool) : handle mime types information
+
+ * portal_transform (the transform tool) : handle transformation of data from a
+ mime type to another
+
+A bunch of ready to use transformations are also provided. Look at the
+documentation for more information.
+
+Notice this package can also be used as a standalone Python package. If
+you've downloaded the Python distribution, you can't make it a Zope
+product since Zope files have been removed from this distribution.
+
+This product is an off-spring of the Archetypes project.
+
+
+Installation
+------------
+
+WARNING : The two installation methods may conflict, choose the one adapted to
+          your need.
+
+Zope
+````
+
+  * Put this package in your Zope's Products directory and restart Zope
+
+  * either use the QuickInstaller to add this product to your CMF site or add an
+  external method to the root of your CMF site with the following information :
+
+    :module: PortalTransforms.Install
+
+    :method: install
+
+  and click the test tab to run it.
+
+Python
+``````
+
+  * Extract the tarball
+
+  * Run "python setup.py install". See "python setup.py install  --help" for
+  installation options.
+
+  * That's it, you should have the library and the *transform* command line tool
+  installed.
+
+
+Windows
+-------
+To make transforms work under Microsoft Windows you should put corresponding
+windows binaries of converters in directory and put directory into windows
+PATH variable.
+
+For pdf_to_html:
+http://ovh.dl.sourceforge.net/sourceforge/pdftohtml/pdftohtml-0.36-win32.zip
+ftp://ftp.foolabs.com/pub/xpdf/xpdf-3.01-win32.zip
+
+For docbook_to_html:
+http://www.zlatkovic.com/pub/libxml/libxslt-1.1.14+.win32.zip
+http://www.zlatkovic.com/pub/libxml/libxml2-2.6.20.win32.zip
+http://www.zlatkovic.com/pub/libxml/iconv-1.9.1.win32.zip
+http://www.zlatkovic.com/pub/libxml/zlib-1.2.3.win32.zip
+
+For ppt_to_html:
+http://heanet.dl.sourceforge.net/sourceforge/chicago/xlHtml-Win32-040.zip
+
+For xls_to_html:
+http://heanet.dl.sourceforge.net/sourceforge/chicago/xlHtml-Win32-040.zip
+
+For ooo_to_html:
+http://ovh.dl.sourceforge.net/sourceforge/gnuwin32/unzip-5.51-1-bin.zip
+also binaries as for docbook_to_html
+
+For ooo_to_docbook:
+You need ooo2dbk.exe binary, that you can create from code located at
+svn co http://svn.nuxeo.org/pub/ooo2dbk
+README in ooo2dbk sources contains information how to compile it on win32.
+
+For word_to_html:
+http://ovh.dl.sourceforge.net/sourceforge/gnuwin32/wv-1.0.2.exe
+
+
+Documentation
+-------------
+See the *docs* directory in this package.
+
+
+Mailing-list
+------------
+Discussion about this products occurs to the archetypes mailing list :
+http://sourceforge.net/mail/?group_id=75272
+or on the #plone channel of irc.freenode.net.
+
+
+Authors
+-------
+
+Benjamin Saller <bcsaller@yahoo.com>
+Sidnei da Silva  <sidnei@x3ng.com>
+Sylvain Thénault <sylvain.thenault@logilab.fr>
