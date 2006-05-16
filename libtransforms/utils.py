@@ -1,15 +1,9 @@
-import re
 import os
 import sys
 from os.path import basename, splitext, join
 from sgmllib import SGMLParser
 
-
-bin_search_path = [
-    '/bin',
-    '/usr/bin',
-    '/usr/local/bin',
-    ]
+bin_search_path = os.environ['PATH'].split(os.pathsep)
 
 class MissingBinary(Exception): pass
 
@@ -18,6 +12,7 @@ def bin_search(binary):
     returning its fullname or None"""
     if sys.platform == 'win32':
         # Directory containing 'binary' should be in PATH
+        # XXX: I don't get this remark - SF
         return binary
     result = None
     mode   = os.R_OK | os.X_OK
