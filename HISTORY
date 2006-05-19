@@ -1,4 +1,22 @@
 *******************************************
+** PortalTransforms V1.7.1 [R1 build 2006/05/19-13:17 by fermigier]
+** SVN URL: https://svn.nuxeo.org/pub/Zope2/PortalTransforms/trunk Revision: 45805
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+- supports opendocument mimetypes
+- supports opendocument transforms to html
+Bug fixes:
+~~~~~~~~~~
+- sxi test now passes
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+- tests tests_transform.py activation
+- tests transformss exclusion list 
+
+*******************************************
 ** PortalTransforms V1.7.0 [R1 build 2006/03/03-17:50 by ben]
 ** SVN URL: https://svn.nuxeo.org/pub/PortalTransforms/trunk Revision: 33914
 Requires:
