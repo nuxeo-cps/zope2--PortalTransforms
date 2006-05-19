@@ -1,4 +1,20 @@
 *******************************************
+** PortalTransforms V1.8.0 [R1 build 2006/05/19-13:18 by fermigier]
+** SVN URL: https://svn.nuxeo.org/pub/Zope2/PortalTransforms/trunk Revision: 45812
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+-
+Bug fixes:
+~~~~~~~~~~
+-
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+
+*******************************************
 ** PortalTransforms V1.7.1 [R1 build 2006/05/19-13:17 by fermigier]
 ** SVN URL: https://svn.nuxeo.org/pub/Zope2/PortalTransforms/trunk Revision: 45805
 Requires:
