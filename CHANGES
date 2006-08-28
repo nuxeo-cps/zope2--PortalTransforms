@@ -6,7 +6,7 @@ New features:
 -
 Bug fixes:
 ~~~~~~~~~~
--
+- Avoid raise on missing binary
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
 -

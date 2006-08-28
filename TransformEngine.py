@@ -3,6 +3,7 @@ from Products.PortalTransforms.data import datastream
 from Products.PortalTransforms.chain import chain
 from Products.PortalTransforms.utils import log, TransformException, DictClass, \
      ListClass, getToolByName, implements, Base, Cache, HAS_ZOPE
+from Products.PortalTransforms.libtransforms.utils import MissingBinary
 
 __revision__ = '$Id$'
 
@@ -267,7 +268,11 @@ MIME type'
         for o_mt, transforms in outputs.items():
             for transform in transforms:
                 required = 0
-                name = transform.name()
+                try:
+                    name = transform.name()
+                except MissingBinary, err:
+                    log('MissingBinary %s' % (err,))
+                    continue
                 if name in requirements:
                     requirements.remove(name)
                     required = 1
