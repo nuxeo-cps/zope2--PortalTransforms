@@ -1,3 +1,23 @@
+===========================================================
+Package: PortalTransforms 1.8.1
+===========================================================
+First release built by: ogrisel at: 2006-10-04T21:19:29
+SVN Tag: https://svn.nuxeo.org/pub/Zope2/PortalTransforms/tags/1.8.1
+Build from: https://svn.nuxeo.org/pub/Zope2/PortalTransforms/trunk@49317
+
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+-
+Bug fixes:
+~~~~~~~~~~
+- Avoid raise on missing binary
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+
 *******************************************
 ** PortalTransforms V1.8.0 [R1 build 2006/05/19-13:18 by fermigier]
 ** SVN URL: https://svn.nuxeo.org/pub/Zope2/PortalTransforms/trunk Revision: 45812
