@@ -13,15 +13,15 @@ from Products.PortalTransforms.libtransforms.commandtransform \
 from zLOG import LOG, DEBUG, WARNING
 
 XSL_STYLESHEET_TRANSFORM = os.path.join(
-                               os.getcwd(), 
-                               os.path.dirname(__file__), 
-                               'od2ml', 
+                               os.getcwd(),
+                               os.path.dirname(__file__),
+                               'od2ml',
                                'document2xhtml.xsl')
-                               
+
 #style sheet for preview : content will be append as subobjects
 XSL_STYLESHEET_DIRECTORY = os.path.join(
                                os.getcwd(),
-                               os.path.dirname(__file__), 
+                               os.path.dirname(__file__),
                                'od2ml',
                                'preview_css' )
 
@@ -45,7 +45,7 @@ class opendocument_to_html(commandtransform):
 
         tmpdir, fullname = self.initialize_tmpdir(data, **kwargs)
         html = self.invokeCommand(tmpdir, fullname)
-        
+
         #opendocument returns utf-8, re-encode according to site
         #encoding comes from CPSSchemas/FileUtils.py
         encoding = kwargs.get('encoding')
@@ -53,16 +53,16 @@ class opendocument_to_html(commandtransform):
             html = html.decode('utf8').encode(encoding)
 
         subObjectsPaths = [tmpdir,
-                           os.path.join(tmpdir, 'Pictures'), 
+                           os.path.join(tmpdir, 'Pictures'),
                            XSL_STYLESHEET_DIRECTORY]
-                           
-        objects = {}           
+
+        objects = {}
         for subObjectsPath in subObjectsPaths:
             if os.path.exists(subObjectsPath):
                 path, images = self.subObjects(subObjectsPath)
                 if images:
                     self.fixImages(path, images, objects)
-                    
+
         # add the css files
         if os.path.exists(XSL_STYLESHEET_DIRECTORY):
             for css_item in os.listdir(XSL_STYLESHEET_DIRECTORY):
@@ -84,7 +84,7 @@ class opendocument_to_html(commandtransform):
             cmd = 'cd "%s" && unzip %s 2>error_log 1>/dev/null' % (
                 tmpdir, fullname)
         os.system(cmd)
-        
+
         #process transform
         if sys.platform == 'win32':
             cmd = 'xsltproc --novalid "%s" "%s" > "%s"' % (
@@ -94,14 +94,14 @@ class opendocument_to_html(commandtransform):
         else:
             cmd = ('cd "%s" && xsltproc --novalid %s content.xml >"%s.html" '
                    '2>"%s.log-xsltproc"') % (
-                                            tmpdir, 
-                                            XSL_STYLESHEET_TRANSFORM, 
+                                            tmpdir,
+                                            XSL_STYLESHEET_TRANSFORM,
                                             sansext(fullname),
                                             sansext(fullname)
                                             )
         LOG(self.__name__, DEBUG, "cmd = %s" % cmd)
         os.system(cmd)
-        
+
         try:
             htmlfile = open(os.path.join(tmpdir, "%s.html" % sansext(fullname)),
                             'r')
