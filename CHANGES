@@ -6,6 +6,7 @@ New features
 -
 Bug fixes
 ~~~~~~~~~
+- Updated tests to output of latest xlhtml.
 - [packaging] bundleman svn property
 New internal features
 ~~~~~~~~~~~~~~~~~~~~~
