@@ -25,18 +25,17 @@ class TransformTest( TestCase ):
         res_data = self.transform.convert(orig, data, filename=filename)
         self.assert_(implements(res_data, idatastream))
         got = res_data.getData()
-        
+
         try:
             output = open(output)
         except IOError:
-            #import sys
             print >>sys.stderr, 'No output file found.'
             print >>sys.stderr, 'File %s created, check it !' % self.output
             output = open(output, 'w')
             output.write(got)
             output.close()
             self.assert_(0)
-            
+
         expected = output.read()
         if self.normalize is not None:
             expected = self.normalize(expected)
@@ -46,15 +45,15 @@ class TransformTest( TestCase ):
         self.assertEquals(got, expected,
                           '[%s]\n\n!=\n\n[%s]\n\nIN %s(%s)' % (
                                     got,
-                                    expected, 
-                                    self.transform.name(), 
+                                    expected,
+                                    self.transform.name(),
                                     self.input))
 
         self.assertEquals(self.subobjects, len(res_data.getSubObjects()),
                                     '%s\n\n!=\n\n%s\n\nIN %s(%s)' % (
-                                    self.subobjects, 
-                                    len(res_data.getSubObjects()), 
-                                    self.transform.name(), 
+                                    self.subobjects,
+                                    len(res_data.getSubObjects()),
+                                    self.transform.name(),
                                     self.input))
 
     def testSame(self):
@@ -66,7 +65,7 @@ class TransformTest( TestCase ):
 
     def __repr__(self):
         return self.transform.name()
-        
+
 
 TRANSFORMS_TESTINFO = (
     # XXX: This transformations will give slightly different results
@@ -202,11 +201,11 @@ def make_tests(test_descr=TRANSFORMS_TESTINFO):
                 _transform = load(_transform).register()
             except:
                 continue
-                
+
         if TR_NAMES is not None and not _transform.name() in TR_NAMES:
             print 'skip test for', _transform.name()
             continue
-        
+
         if EXCLUDE_TESTS is not None and _transform.name() in EXCLUDE_TESTS:
             print 'exclude %s testing for input %s' % ( _transform.name(), tr_input)
             continue
