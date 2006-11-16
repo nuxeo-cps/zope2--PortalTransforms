@@ -1,4 +1,25 @@
 ===========================================================
+Package: PortalTransforms 1.8.2
+===========================================================
+First release built by: gracinet at: 2006-11-16T18:21:03
+SVN Tag: https://svn.nuxeo.org/pub/Zope2/PortalTransforms/tags/1.8.2
+Build from: https://svn.nuxeo.org/pub/Zope2/PortalTransforms/trunk@50008
+
+Requires
+~~~~~~~~
+-
+New features
+~~~~~~~~~~~~
+-
+Bug fixes
+~~~~~~~~~
+- Updated tests to output of latest xlhtml.
+- [packaging] bundleman svn property
+New internal features
+~~~~~~~~~~~~~~~~~~~~~
+- 
+
+===========================================================
 Package: PortalTransforms 1.8.1
 ===========================================================
 First release built by: ogrisel at: 2006-10-04T21:19:29
