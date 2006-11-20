@@ -179,12 +179,19 @@ class application_opendocument_graphics(MimeTypeItem):
     mimetypes  = ('application/vnd.oasis.opendocument.graphics',)
     extensions = ('odg',)
     binary     = 1
-    
+
 class application_opendocument_graphics_template(MimeTypeItem):
     __implements__ = MimeTypeItem.__implements__
     __name__   = "OpenOffice.org 2.x Draw Template"
     mimetypes  = ('application/vnd.oasis.opendocument.graphics-template',)
     extensions = ('otg',)
+    binary     = 1
+
+class application_openofficeorg_extension(MimeTypeItem):
+    __implements__ = MimeTypeItem.__implements__
+    __name__   = "OpenOffice.org 2.0.4+ Extension"
+    mimetypes  = ('application/vnd.openofficeorg.extension',)
+    extensions = ('oxt',)
     binary     = 1
 
 class text_xml(MimeTypeItem):
@@ -239,6 +246,7 @@ reg_types = [
     application_opendocument_calc_template,
     application_opendocument_graphics,
     application_opendocument_graphics_template,
+    application_openofficeorg_extension,
     text_xml,
     text_structured,
     text_rest,
