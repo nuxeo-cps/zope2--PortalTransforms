@@ -103,14 +103,14 @@
     <xsl:template match="text:index-body">
         <xsl:param name="collectedGlobalData"/>
 
-        <xsl:apply-templates mode="content table">
+        <xsl:apply-templates mode="content_table">
             <xsl:with-param name="collectedGlobalData" select="$collectedGlobalData"/>
         </xsl:apply-templates>
     </xsl:template>
 
 
 
-    <xsl:template match="text:index-title" mode="content table">
+    <xsl:template match="text:index-title" mode="content_table">
         <xsl:param name="collectedGlobalData"/>
 
         <xsl:apply-templates>
@@ -198,7 +198,7 @@
 
 
      <!-- content table link  -->
-    <xsl:template match="text:a" mode="content table">
+    <xsl:template match="text:a" mode="content_table">
         <xsl:param name="collectedGlobalData"/>
 
 
@@ -617,21 +617,21 @@
             -->
         <xsl:variable name="childrenHeadings-RTF">
             <!-- all headers from children documents will be added -->
-            <xsl:apply-templates select="/*/office:body/text:section" mode="creation of variable"/>
+            <xsl:apply-templates select="/*/office:body/text:section" mode="creation_of_variable"/>
         </xsl:variable>
         <xsl:if test="$isDebugMode"><xsl:message>Finished the Creation of global document helper variable for the child documents!</xsl:message></xsl:if>
 
 
         <xsl:choose>
             <xsl:when test="function-available('xt:node-set')">
-                <xsl:call-template name="Create global variable for Content Table">
+                <xsl:call-template name="Create_global_variable_for_Content_Table">
                     <xsl:with-param name="chapterRefs"     select="xt:node-set($chapterRefs-RTF)"/>
                     <xsl:with-param name="childrenHeadings"     select="xt:node-set($childrenHeadings-RTF)"/>
                     <xsl:with-param name="collectedGlobalData"  select="$collectedGlobalData"/>
                 </xsl:call-template>
             </xsl:when>
             <xsl:when test="function-available('xalan:nodeset')">
-                <xsl:call-template name="Create global variable for Content Table">
+                <xsl:call-template name="Create_global_variable_for_Content_Table">
                     <xsl:with-param name="chapterRefs"     select="xalan:nodeset($chapterRefs-RTF)"/>
                     <xsl:with-param name="childrenHeadings"     select="xt:node-set($childrenHeadings-RTF)"/>
                     <xsl:with-param name="collectedGlobalData"  select="$collectedGlobalData"/>
@@ -937,7 +937,7 @@
 	            <!-- The necessary auxiliary variable hasn't build yet.
 	            This variable gonna store all headers (with chapter numbers) and the URL of their files -->
 
-                <xsl:call-template name="Create helper variables for Content Table">
+                <xsl:call-template name="Create_helper_variables_for_Content_Table">
                     <xsl:with-param name="collectedGlobalData"   select="$collectedGlobalData"/>
                 </xsl:call-template>
 
@@ -1023,7 +1023,7 @@
     <!-- ******************************************************************************* -->
 
 
-    <xsl:template match="/*/office:body/text:section" mode="creation of variable">
+    <xsl:template match="/*/office:body/text:section" mode="creation_of_variable">
         <xsl:call-template name="getChildRootNode"/>
 
         <!-- after the last child document the global document will be parsed -->
@@ -1333,7 +1333,7 @@ ODK PATCH NO INDEX ELEMENT WANTED !! - null pointer exception
 
 
 
-    <xsl:template match="text:p" mode="content table">
+    <xsl:template match="text:p" mode="content_table">
         <xsl:param name="collectedGlobalData"/>
 
         <xsl:variable name="allTabStopStyles" select="$office:automatic-styles/style:style[@style:name = current()/@text:style-name]/style:properties/style:tab-stops"/>
@@ -1357,7 +1357,7 @@ ODK PATCH NO INDEX ELEMENT WANTED !! - null pointer exception
 
             <!-- all elements before the first tabStop -->
             <xsl:variable name="testNo-RTF">
-                <xsl:apply-templates select="node()" mode="cell content"/>
+                <xsl:apply-templates select="node()" mode="cell_content"/>
             </xsl:variable>
             <xsl:variable name="tabNodePositions" select="xt:node-set($testNo-RTF)"/>
 
@@ -1540,31 +1540,31 @@ Scenarios unmatched:
 
         <xsl:choose>
             <xsl:when test="$endingTabStopPosition = 1">
-                <xsl:apply-templates mode="content table" select="node()[position() &lt; $tabNodePositions/tab-stop-node-position[$endingTabStopPosition]]">
+                <xsl:apply-templates mode="content_table" select="node()[position() &lt; $tabNodePositions/tab-stop-node-position[$endingTabStopPosition]]">
                     <xsl:with-param name="collectedGlobalData" select="$collectedGlobalData"/>
                 </xsl:apply-templates>
             </xsl:when>
             <xsl:when test="$endingTabStopPosition > $lastNodePosition">
-                <xsl:apply-templates mode="content table" select="node()[position() > $tabNodePositions/tab-stop-node-position[$endingTabStopPosition - 1]]">
+                <xsl:apply-templates mode="content_table" select="node()[position() > $tabNodePositions/tab-stop-node-position[$endingTabStopPosition - 1]]">
                     <xsl:with-param name="collectedGlobalData" select="$collectedGlobalData"/>
                 </xsl:apply-templates>
             </xsl:when>
             <xsl:otherwise>
-                <xsl:apply-templates mode="content table" select="node()[position() &lt; $tabNodePositions/tab-stop-node-position[$endingTabStopPosition]][position() > $tabNodePositions/tab-stop-node-position[$endingTabStopPosition - 1]]">
+                <xsl:apply-templates mode="content_table" select="node()[position() &lt; $tabNodePositions/tab-stop-node-position[$endingTabStopPosition]][position() > $tabNodePositions/tab-stop-node-position[$endingTabStopPosition - 1]]">
                     <xsl:with-param name="collectedGlobalData" select="$collectedGlobalData"/>
                 </xsl:apply-templates>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
 
-    <xsl:template mode="content table" match="text:s">
+    <xsl:template mode="content_table" match="text:s">
         <xsl:call-template name="write-breakable-whitespace">
             <xsl:with-param name="whitespaces" select="@text:c"/>
         </xsl:call-template>
     </xsl:template>
 
 
-    <xsl:template match="*" mode="cell content">
+    <xsl:template match="*" mode="cell_content">
 
         <xsl:if test="name() = 'text:tab-stop' or *[name() = 'text:tab-stop']">
             <xsl:element name="tab-stop-node-position">

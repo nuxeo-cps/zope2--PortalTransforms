@@ -189,8 +189,6 @@ EXCLUDE_TESTS = [
     'word_to_html',
     'xls_to_html',
     'rest_to_html',
-    'test_writer',
-    'test_calc',
 ]
 
 def make_tests(test_descr=TRANSFORMS_TESTINFO):

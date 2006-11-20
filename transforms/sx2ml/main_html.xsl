@@ -228,7 +228,7 @@
 
         <xsl:choose>
             <xsl:when test="$isDebugMode">
-                <xsl:call-template name="check parameter"/>
+                <xsl:call-template name="check_parameter"/>
 
                 <xsl:if test="not($isJavaDisabled)">
                     <xsl:call-template name="debug-style-collecting-time"/>
