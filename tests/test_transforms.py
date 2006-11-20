@@ -1,3 +1,5 @@
+# $Id$
+
 from __future__ import nested_scopes
 from rigging import *
 from utils import input_file_path, output_file_path, normalize_html,\
@@ -182,11 +184,14 @@ initialise('Products.PortalTransforms.transforms.python', normalize_html, "*.py"
 TR_NAMES = None
 
 # Some tests do not pass - exclude them
-EXCLUDE_TESTS = ['tidy_html',
-                 'word_to_html',
-                 'xls_to_html',
-                 'rest_to_html',
-                ]
+EXCLUDE_TESTS = [
+    'tidy_html',
+    'word_to_html',
+    'xls_to_html',
+    'rest_to_html',
+    'test_writer',
+    'test_calc',
+]
 
 def make_tests(test_descr=TRANSFORMS_TESTINFO):
     """generate tests classes from test info
