@@ -1,4 +1,24 @@
 ===========================================================
+Package: PortalTransforms 1.8.3
+===========================================================
+First release built by: gracinet at: 2006-11-23T21:02:56
+SVN Tag: https://svn.nuxeo.org/pub/Zope2/PortalTransforms/tags/1.8.3
+Build from: https://svn.nuxeo.org/pub/Zope2/PortalTransforms/trunk@50246
+
+Requires
+~~~~~~~~
+-
+New features
+~~~~~~~~~~~~
+-
+Bug fixes
+~~~~~~~~~
+- Removed unit tests no presently passing for unknown reasons.
+New internal features
+~~~~~~~~~~~~~~~~~~~~~
+- 
+
+===========================================================
 Package: PortalTransforms 1.8.2
 ===========================================================
 First release built by: gracinet at: 2006-11-16T18:21:03
