@@ -14,7 +14,9 @@ class ooo_to_docbook(commandtransform):
     __implements__ = itransform
 
     __name__ = 'ooo_to_docbook'
-    inputs   = ('application/vnd.sun.xml.writer',)
+    inputs   = ('application/vnd.oasis.opendocument.text',
+                'application/vnd.sun.xml.writer',
+                )
     output  = 'application/docbook+xml'
 
     binaryName = os.path.join(
