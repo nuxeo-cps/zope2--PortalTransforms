@@ -1,4 +1,24 @@
 ===========================================================
+Package: PortalTransforms 1.9.0
+===========================================================
+First release built by: gracinet at: 2006-11-29T02:02:46
+SVN Tag: https://svn.nuxeo.org/pub/Zope2/PortalTransforms/tags/1.9.0
+Build from: https://svn.nuxeo.org/pub/Zope2/PortalTransforms/trunk@50372
+
+Requires
+~~~~~~~~
+-
+New features
+~~~~~~~~~~~~
+- levearge CPSOOo support of openodocument ODT text files
+Bug fixes
+~~~~~~~~~
+-
+New internal features
+~~~~~~~~~~~~~~~~~~~~~
+- 
+
+===========================================================
 Package: PortalTransforms 1.8.3
 ===========================================================
 First release built by: gracinet at: 2006-11-23T21:02:56
