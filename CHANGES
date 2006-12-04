@@ -6,7 +6,7 @@ New features
 -
 Bug fixes
 ~~~~~~~~~
-- Removed encodings not needed in transforms/opendocument_to_html.py.
+-
 New internal features
 ~~~~~~~~~~~~~~~~~~~~~
 - 
