@@ -46,12 +46,6 @@ class opendocument_to_html(commandtransform):
         tmpdir, fullname = self.initialize_tmpdir(data, **kwargs)
         html = self.invokeCommand(tmpdir, fullname)
 
-        #opendocument returns utf-8, re-encode according to site
-        #encoding comes from CPSSchemas/FileUtils.py
-        encoding = kwargs.get('encoding')
-        if encoding is not None:
-            html = html.decode('utf8').encode(encoding)
-
         subObjectsPaths = [tmpdir,
                            os.path.join(tmpdir, 'Pictures'),
                            XSL_STYLESHEET_DIRECTORY]
