@@ -1,4 +1,25 @@
 ===========================================================
+Package: PortalTransforms 1.10.0
+===========================================================
+First release built by: gracinet at: 2006-12-05T19:06:31
+SVN Tag: https://svn.nuxeo.org/pub/Zope2/PortalTransforms/tags/1.10.0
+Build from: https://svn.nuxeo.org/pub/Zope2/PortalTransforms/trunk@50516
+
+Requires
+~~~~~~~~
+-
+New features
+~~~~~~~~~~~~
+- Added the word_to_text transform, thanks to Yves Bastide.
+Bug fixes
+~~~~~~~~~
+- 
+New internal features
+~~~~~~~~~~~~~~~~~~~~~
+- Fixed #1760 : faster scrubHTML if lxml is present on the system, thanks to
+  Yves Bastide.
+
+===========================================================
 Package: PortalTransforms 1.9.1
 ===========================================================
 First release built by: madarche at: 2006-12-04T15:34:40
