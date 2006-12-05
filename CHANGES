@@ -3,10 +3,11 @@ Requires
 -
 New features
 ~~~~~~~~~~~~
-- Added the word_to_text transform. 
+- Added the word_to_text transform, thanks to Yves Bastide.
 Bug fixes
 ~~~~~~~~~
 - 
 New internal features
 ~~~~~~~~~~~~~~~~~~~~~
-- Fixed #1760 : faster scrubHTML if lxml is present on the system.
+- Fixed #1760 : faster scrubHTML if lxml is present on the system, thanks to
+  Yves Bastide.
