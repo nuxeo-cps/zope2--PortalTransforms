@@ -20,6 +20,7 @@ modules = [
     'st',             # zopish
     'rest',           # docutils
     'word_to_html',   # uno, com, wvware
+    'word_to_text',   # lxml, wvware
     'xls_to_html',    # xlhtml
     'ppt_to_html',    # ppthtml
     'ooo_to_html',    # unzip + xsltproc
