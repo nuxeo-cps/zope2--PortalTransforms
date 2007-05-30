@@ -1,3 +1,5 @@
+# $Id$
+
 import os
 import sys
 from os.path import basename, splitext, join
@@ -244,13 +246,13 @@ def sgmllibGetBodyText( html_fd ):
 if HAVE_LXML:
     _valid_tags = VALID_TAGS.keys()
     _valid_tags.sort()
-    
+
     ENCODING = 'iso-8859-15'            # Should this be tunable?
 
     SCRUB_TRANSFORM = """
     <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
         <xsl:output method="html" encoding="%s"/>
-       
+
         <xsl:template match="@*|$ALLOWED_NODE_TYPES">
             <xsl:copy>
                 <xsl:apply-templates select="@*|node()"/>
@@ -261,12 +263,12 @@ if HAVE_LXML:
     _transform = SCRUB_TRANSFORM.replace('$ALLOWED_NODE_TYPES', '|'.join(_valid_tags))
     _xslt_doc = etree.parse(StringIO(_transform))
     scrub_transform = etree.XSLT(_xslt_doc)
-    
+
     def lxmlScrubHTML( html ):
         """ Strip illegal HTML tags from string text. Fast.  """
         parser = etree.HTMLParser()
         tree = etree.parse(StringIO(html), parser)
-        
+
         # First pass: check for forbidden tags/attribs, adapt content-type.
         for elem in tree.getroot().getiterator():
             if elem.tag in NASTY_TAGS:
@@ -291,7 +293,7 @@ if HAVE_LXML:
         # Second pass: remove non-approved tags.
         result = scrub_transform(tree)
         return str(result)
-    
+
     TEXT_TRANSFORM = """
     <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
         <xsl:output method="text" encoding="%s"/>
@@ -301,15 +303,15 @@ if HAVE_LXML:
                 <xsl:apply-templates/>
             </xsl:copy>
         </xsl:template>
-    
+
         <xsl:template match="/html/head//*">
         </xsl:template>
-    
+
     </xsl:stylesheet>
     """ % ENCODING
     _xslt_doc = etree.parse(StringIO(TEXT_TRANSFORM))
     text_transform = etree.XSLT(_xslt_doc)
-    
+
     def lxmlGetBodyText( html_fd ):
         """ Get the text of an html <body>.
         """
