@@ -6,7 +6,7 @@ New features
 -
 Bug fixes
 ~~~~~~~~~
--
+- #1898: IllegalHTML exception blocking HTML rendering and indexing.
 New internal features
 ~~~~~~~~~~~~~~~~~~~~~
 - 

@@ -1,11 +1,15 @@
 # $Id$
 
+from logging import getLogger
+import re
 import os
 import sys
 from os.path import basename, splitext, join
-from sgmllib import SGMLParser
 from cStringIO import StringIO
-import re
+from sgmllib import SGMLParser
+
+LOG_KEY = 'PortalTransforms.libtransforms.utils'
+logger = getLogger(LOG_KEY)
 
 HAVE_LXML = 0
 try:
@@ -127,9 +131,6 @@ NASTY_TAGS = { 'script'     : 1
              , 'applet'     : 1
              }
 
-class IllegalHTML( ValueError ):
-    pass
-
 class StrippingParser( SGMLParser ):
     """ Pass only allowed tags;  raise exception for known-bad.  """
 
@@ -170,10 +171,10 @@ class StrippingParser( SGMLParser ):
             for k, v in attrs:
 
                 if k.lower().startswith( 'on' ):
-                    raise IllegalHTML, 'Javascipt event "%s" not allowed.' % k
+                    logger.debug('Javascript event "%s" not allowed.' % k)
 
                 if v.lower().startswith( 'javascript:' ):
-                    raise IllegalHTML, 'Javascipt URI "%s" not allowed.' % v
+                    logger.debug('Javascript URI "%s" not allowed.' % v)
 
                 self.result = '%s %s="%s"' % (self.result, k, v)
 
@@ -184,7 +185,7 @@ class StrippingParser( SGMLParser ):
                 self.result = self.result + ' />'
 
         elif NASTY_TAGS.get( tag ):
-            raise IllegalHTML, 'Dynamic tag "%s" not allowed.' % tag
+            logger.debug('Dynamic tag "%s" not allowed.' % tag)
 
         else:
             pass    # omit tag
@@ -225,7 +226,7 @@ class BodyTextParser( StrippingParser ):
         if tag == "body":
             self.in_body = True
         elif NASTY_TAGS.get( tag ):
-            raise IllegalHTML, 'Dynamic tag "%s" not allowed.' % tag
+            logger.debug('Dynamic tag "%s" not allowed.' % tag)
         elif self.in_body:
             self.result = '%s ' % self.result
 
