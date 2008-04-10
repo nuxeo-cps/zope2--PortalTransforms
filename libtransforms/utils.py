@@ -273,16 +273,13 @@ if HAVE_LXML:
         # First pass: check for forbidden tags/attribs, adapt content-type.
         for elem in tree.getroot().getiterator():
             if elem.tag in NASTY_TAGS:
-                raise IllegalHTML(
-                    'Dynamic tag "%s" not allowed.' % elem.tag)
+                logger.debug('Dynamic tag "%s" not allowed.' % elem.tag)
             else:
                 for attrib, value in elem.attrib.iteritems():
                     if attrib.startswith('on'):
-                        raise IllegalHTML(
-                            'Javascript event "%s" not allowed.' % attrib)
+                        logger.debug('Javascript event "%s" not allowed.' % attrib)
                     if value.lower().startswith('javascript:'):
-                        raise IllegalHTML(
-                            'Javascript URI "%s" not allowed.' % value)
+                        logger.debug('Javascript URI "%s" not allowed.' % value)
             if elem.tag == 'meta' and 'http-equiv' in elem.attrib:
                 if elem.attrib['http-equiv'].lower() == 'content-type':
                     if 'content' in elem.attrib:
