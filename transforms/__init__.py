@@ -10,6 +10,8 @@
 ###    is called and this produces an instance that will used to
 ###    implement the transform, if register needs to fail for now it
 ###    should raise an ImportError as well (dumb, I know)
+#
+# $Id$
 
 from Products.PortalTransforms.libtransforms.utils import MissingBinary
 from zLOG import LOG, DEBUG, WARNING
@@ -46,12 +48,11 @@ for m in modules:
         ns = __import__(m, g, g, None)
         LOG(logKey, DEBUG, "Appending transform = %s" % ns)
         transforms.append(ns.register())
-    #except ImportError, e:
-    #    LOG(logKey, WARNING, "Problem importing module %s : %s" % (m, e))
-    except MissingBinary, e:
-        LOG(logKey, WARNING, str(e))
+    except Exception, exc:
+        LOG(logKey, WARNING, exc)
 
 
 def initialize(engine):
     for transform in transforms:
         engine.registerTransform(transform)
+
