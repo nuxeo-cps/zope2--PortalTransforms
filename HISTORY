@@ -1,4 +1,25 @@
 ===========================================================
+Package: PortalTransforms 1.11.3
+===========================================================
+First release built by: madarche at: 2008-11-23T22:26:19
+SVN Tag: https://svn.nuxeo.org/pub/Zope2/PortalTransforms/tags/1.11.3
+Build from: https://svn.nuxeo.org/pub/Zope2/PortalTransforms/trunk@53051
+
+Requires
+~~~~~~~~
+-
+New features
+~~~~~~~~~~~~
+-
+Bug fixes
+~~~~~~~~~
+- Made the creation of transforms log any error in the event log so nothing is
+  lost and trap everything. This makes deployment easier.
+New internal features
+~~~~~~~~~~~~~~~~~~~~~
+- 
+
+===========================================================
 Package: PortalTransforms 1.11.2
 ===========================================================
 First release built by: madarche at: 2008-04-18T12:58:37

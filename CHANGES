@@ -6,8 +6,7 @@ New features
 -
 Bug fixes
 ~~~~~~~~~
-- Made the creation of transforms log any error in the event log so nothing is
-  lost and trap everything. This makes deployment easier.
+-
 New internal features
 ~~~~~~~~~~~~~~~~~~~~~
 - 
