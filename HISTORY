@@ -1,4 +1,21 @@
 ===========================================================
+Package: PortalTransforms 1.12.0
+===========================================================
+First release built by: gracinet at: 2010-03-13T14:56:01
+Requires
+~~~~~~~~
+-
+New features
+~~~~~~~~~~~~
+-
+Bug fixes
+~~~~~~~~~
+-
+New internal features
+~~~~~~~~~~~~~~~~~~~~~
+- Switch to mercurial DVCS and hgbundler packaging management 
+
+===========================================================
 Package: PortalTransforms 1.11.3
 ===========================================================
 First release built by: madarche at: 2008-11-23T22:26:19
