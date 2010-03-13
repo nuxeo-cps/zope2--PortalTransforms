@@ -9,4 +9,4 @@ Bug fixes
 -
 New internal features
 ~~~~~~~~~~~~~~~~~~~~~
-- 
+- Switch to mercurial DVCS and hgbundler packaging management 
