@@ -4,6 +4,8 @@ import re
 import shutil
 from os.path import join, basename
 
+from Products.PortalTransforms.utils import log
+from Products.PortalTransforms.libtransforms.utils import MissingBinary
 from Products.PortalTransforms.interfaces import itransform
 from utils import bin_search
 
@@ -16,7 +18,12 @@ class commandtransform:
         if name is not None:
             self.__name__ = name
         if binary is not None:
-            self.binary = bin_search(binary)
+            try:
+                self.binary = bin_search(binary)
+            except MissingBinary, err:
+                ERROR = 200
+                log("MissingBinary %s" % (err,), ERROR)
+                self.binary = None
 
     def name(self):
         return self.__name__

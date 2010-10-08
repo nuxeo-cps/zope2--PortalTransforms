@@ -6,7 +6,7 @@ New features
 -
 Bug fixes
 ~~~~~~~~~
--
+- A missing binary shouldn't break the tool's view
 New internal features
 ~~~~~~~~~~~~~~~~~~~~~
 - 
