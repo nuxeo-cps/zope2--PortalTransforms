@@ -6,7 +6,8 @@ New features
 -
 Bug fixes
 ~~~~~~~~~
-- A missing binary shouldn't break the tool's view
+- #2255: A missing binary shouldn't break the tool's view, but simply remove the
+  transform from the tool.
 New internal features
 ~~~~~~~~~~~~~~~~~~~~~
 - 
