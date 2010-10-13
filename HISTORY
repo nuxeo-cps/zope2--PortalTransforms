@@ -1,4 +1,22 @@
 ===========================================================
+Package: PortalTransforms 1.12.1
+===========================================================
+First release built by: gracinet at: 2010-10-13T11:36:19
+Requires
+~~~~~~~~
+-
+New features
+~~~~~~~~~~~~
+-
+Bug fixes
+~~~~~~~~~
+- #2255: A missing binary shouldn't break the tool's view, but simply remove the
+  transform from the tool.
+New internal features
+~~~~~~~~~~~~~~~~~~~~~
+- 
+
+===========================================================
 Package: PortalTransforms 1.12.0
 ===========================================================
 First release built by: gracinet at: 2010-03-13T14:56:01
