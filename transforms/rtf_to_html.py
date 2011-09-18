@@ -14,7 +14,7 @@ class rtf_to_html(commandtransform):
     inputs   = ('application/rtf',)
     output  = 'text/html'
 
-    binaryName = "rtf-converter"
+    binaryName = "unrtf"
 
     def __init__(self):
         commandtransform.__init__(self, binary=self.binaryName)
@@ -36,8 +36,8 @@ class rtf_to_html(commandtransform):
     def invokeCommand(self, tmpdir, fullname):
         # FIXME: windows users...
         htmlfile = "%s/%s.html" % (tmpdir, sansext(fullname))
-        cmd = 'cd "%s" && %s -o %s "%s" 2>error_log 1>/dev/null' % (
-            tmpdir, self.binary, htmlfile, fullname)
+        cmd = 'cd "%s" && %s "%s" 2>error_log > %s' % (
+            tmpdir, self.binary, fullname, htmlfile)
         system(cmd)
         try:
             html = open(htmlfile).read()

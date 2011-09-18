@@ -6,7 +6,7 @@ New features
 -
 Bug fixes
 ~~~~~~~~~
--
+- #2450: switched rtf_to_html to the prevalent unrtf
 New internal features
 ~~~~~~~~~~~~~~~~~~~~~
 - 
