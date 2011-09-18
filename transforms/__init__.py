@@ -33,7 +33,6 @@ modules = [
     'pdf_to_html',    # sf.net/projects/pdftohtml
     'pdf_to_text',    # www.foolabs.com/xpdf
     'rtf_to_html',    # sf.net/projects/rtf-converter
-    'rtf_to_xml',     # sf.net/projects/rtf2xml
     'lynx_dump',      # lynx -dump
     'html_to_text',   # re based transform
     'python',         # python source files, no dependancies
