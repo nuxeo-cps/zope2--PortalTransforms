@@ -38,7 +38,8 @@ def bin_search(binary):
             result = path
             break
     else:
-        raise MissingBinary('Unable to find binary "%s"' % binary)
+        raise MissingBinary('Unable to find executable "%s" '
+                            '(check the read and execute permissions)' % binary)
     return result
 
 
