@@ -6,8 +6,7 @@ New features
 -
 Bug fixes
 ~~~~~~~~~
-- #2450: switched rtf_to_html to the prevalent unrtf
-- Removed useless executable bit on files
+-
 New internal features
 ~~~~~~~~~~~~~~~~~~~~~
 - 
