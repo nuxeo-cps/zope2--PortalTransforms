@@ -1,4 +1,22 @@
 ===========================================================
+Package: PortalTransforms 1.12.2
+===========================================================
+First release built by: gracinet at: 2011-09-23T00:28:33
+Requires
+~~~~~~~~
+-
+New features
+~~~~~~~~~~~~
+-
+Bug fixes
+~~~~~~~~~
+- #2450: switched rtf_to_html to the prevalent unrtf
+- Removed useless executable bit on files
+New internal features
+~~~~~~~~~~~~~~~~~~~~~
+- 
+
+===========================================================
 Package: PortalTransforms 1.12.1
 ===========================================================
 First release built by: gracinet at: 2010-10-13T11:36:19
